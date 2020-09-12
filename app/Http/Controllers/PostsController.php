@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Posts;
+use App\Comments;
 use Illuminate\Support\Facades\DB;
 
 class PostsController extends Controller
@@ -16,7 +17,7 @@ class PostsController extends Controller
     public function single($id)
     {
         $post = Posts::findOrFail($id);
-
-        return view('blogdetails')->with('post',$post);
+        $comments = Comments::all()->where('post_id',$id);
+        return view('blogdetails')->with('post',$post)->with('comments',$comments);
     }
 }

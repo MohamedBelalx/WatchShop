@@ -27,6 +27,7 @@ Route::get('/shop',function()
 Route::get('/blog',"PostsController@index")->name('blog');
 
 Route::get('/blogdetails/{id}',"PostsController@single")->name('blogdetails');
+Route::post('/blogdetails/comment/{id}',"CommentsController@insert")->name('comment');
 Route::get('/productdetails',function()
 {
     return view('prddetails');

@@ -94,21 +94,18 @@
                   </div>
                   <div class="comments-area">
                      <h4>05 Comments</h4>
+
+
+                     @foreach($comments as $comment)
                      <div class="comment-list">
                         <div class="single-comment justify-content-between d-flex">
                            <div class="user justify-content-between d-flex">
-                              <div class="thumb">
-                                 <img src="assets/img/comment/comment_3.png" alt="">
-                              </div>
                               <div class="desc">
-                                 <p class="comment">
-                                    Multiply sea night grass fourth day sea lesser rule open subdue female fill which them
-                                    Blessed, give fill lesser bearing multiply sea night grass fourth day sea lesser
-                                 </p>
+                                 <p class="comment">{{$comment->body}}</p>
                                  <div class="d-flex justify-content-between">
                                     <div class="d-flex align-items-center">
                                        <h5>
-                                          <a href="#">Emilly Blunt</a>
+                                          <a href="#">{{$comment->name}}</a>
                                        </h5>
                                     </div>
                                     <div class="reply-btn">
@@ -120,9 +117,11 @@
                         </div>
                      </div>
                   </div>
+                  @endforeach
                   <div class="comment-form">
                      <h4>Leave a Reply</h4>
-                     <form class="form-contact comment_form" action="#" id="commentForm">
+                     <form class="form-contact comment_form" action="{{route('comment',['id'=>$post->id])}}" id="commentForm" method='POST'>
+                        @csrf
                         <div class="row">
                            <div class="col-12">
                               <div class="form-group">
@@ -138,11 +137,6 @@
                            <div class="col-sm-6">
                               <div class="form-group">
                                  <input class="form-control" name="email" id="email" type="email" placeholder="Email">
-                              </div>
-                           </div>
-                           <div class="col-12">
-                              <div class="form-group">
-                                 <input class="form-control" name="website" id="website" type="text" placeholder="Website">
                               </div>
                            </div>
                         </div>

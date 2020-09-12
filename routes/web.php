@@ -24,15 +24,9 @@ Route::get('/shop',function()
     return view('shop');
 });
 
-Route::get('/blog',function()
-{
-    return view('blog');
-});
+Route::get('/blog',"PostsController@index")->name('blog');
 
-Route::get('/blogdetails',function()
-{
-    return view('blogdetails');
-});
+Route::get('/blogdetails/{id}',"PostsController@single")->name('blogdetails');
 Route::get('/productdetails',function()
 {
     return view('prddetails');

@@ -8,7 +8,7 @@ use Faker\Generator as Faker;
 $factory->define(Posts::class, function (Faker $faker) {
     return [
         'title' => $faker->name,
-        'body' => Str::random(600),
+        'body' => $faker->paragraph(100),
         'img' => 'uploads/posts/blog-img1.jpg'
     ];
 });

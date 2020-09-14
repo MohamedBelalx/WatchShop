@@ -11,9 +11,8 @@
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-});
+Route::get('/',"IndexController@index");
+
 Route::get('/cart',function()
 {
     return view('cart');
@@ -28,10 +27,8 @@ Route::get('/blog',"PostsController@index")->name('blog');
 
 Route::get('/blogdetails/{id}',"PostsController@single")->name('blogdetails');
 Route::post('/blogdetails/comment/{id}',"CommentsController@insert")->name('comment');
-Route::get('/productdetails',function()
-{
-    return view('prddetails');
-});
+
+Route::get('/product/details/{id}',"ProductController@details")->name('details');
 
 Route::get('/contact',function()
 {

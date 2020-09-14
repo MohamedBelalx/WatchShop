@@ -24,23 +24,20 @@
                 <div class="col-lg-12">
                 <div class="product_img_slide owl-carousel">
                     <div class="single_product_img">
-                        <img src="assets/img/gallery/gallery1.png" alt="#" class="img-fluid">
+                        <img src="{{asset($product->img)}}" alt="this is prodcut img" class="img-fluid">
                     </div>
                     <div class="single_product_img">
-                        <img src="assets/img/gallery/gallery01.png" alt="#" class="img-fluid">
+                        <img src="{{asset($product->img)}}" alt="this is prodcut img" class="img-fluid">
                     </div>
                     <div class="single_product_img">
-                        <img src="assets/img/gallery/gallery1.png" alt="#" class="img-fluid">
+                        <img src="{{asset($product->img)}}" alt="this is prodcut img" class="img-fluid">
                     </div>
                 </div>
                 </div>
                 <div class="col-lg-8">
                 <div class="single_product_text text-center">
-                    <h3>Foam filling cotton slow <br>
-                        rebound pillows</h3>
-                    <p>
-                        Seamlessly empower fully researched growth strategies and interoperable internal or “organic” sources. Credibly innovate granular internal or “organic” sources whereas high standards in web-readiness. Credibly innovate granular internal or organic sources whereas high standards in web-readiness. Energistically scale future-proof core competencies vis-a-vis impactful experiences. Dramatically synthesize integrated schemas. with optimal networks.
-                    </p>
+                    <h3>{{$product->name}}</h3>
+                    <p>{{$product->details}}</p>
                     <div class="card_area">
                         <div class="product_count_area">
                             <p>Quantity</p>

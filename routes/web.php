@@ -38,6 +38,15 @@ Route::get('/ulogin',function()
 {
     return view('ulogin');
 });
+
+/* Start Admin Routes */ 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/home/manage/posts','PostsController@manage')->name('manage');
+Route::get('/home/posts/delete/{id}','PostsController@delete')->name('deletepost');
+Route::get('home/posts','PostsController@create')->name('createpost');
+Route::get('home/posts/edit/{id}','PostsController@edit')->name('editpost');
+Route::post('home/posts/update/{id}','PostsController@update')->name('updatepost');
+Route::post('home/posts/insert','PostsController@insert')->name('insertpost');

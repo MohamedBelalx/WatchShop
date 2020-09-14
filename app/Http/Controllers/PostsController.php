@@ -18,6 +18,12 @@ class PostsController extends Controller
     {
         $post = Posts::findOrFail($id);
         $comments = Comments::all()->where('post_id',$id);
-        return view('blogdetails')->with('post',$post)->with('comments',$comments);
+        $count = DB::table('comments')->where('post_id',$id)->count('body');
+        
+        return view('blogdetails')
+        ->with('post',$post)
+        ->with('comments',$comments)
+        ->with('count',$count);
+        
     }
 }

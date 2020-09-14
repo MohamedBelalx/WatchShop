@@ -72,8 +72,24 @@
             </div>
         </nav>
 
+
         <main class="py-4">
-            @yield('content')
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4">
+                    <ul class="list-group">
+                        <li class="list-group-item"><a href="#">Manage Blog</a></li>
+                        <li class="list-group-item"><a href="#">Create Post</a></li>
+                        <li class="list-group-item"><a href="#">Create Product</a></li>
+                        <li class="list-group-item"><a href="#">Manage Product</a></li>
+                        <li class="list-group-item">Vestibulum at eros</li>
+                    </ul>
+                    </div>
+
+                    @yield('content')
+                </div>
+            </div>
+            
         </main>
     </div>
 </body>

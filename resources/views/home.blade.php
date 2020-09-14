@@ -1,8 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
+
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">Dashboard</div>
@@ -14,10 +13,10 @@
                         </div>
                     @endif
 
-                    You are logged in!
+                    From Here You Can Manage All Website Content Please Choose An Option from
+                    The Aside Links To Navigate
                 </div>
             </div>
         </div>
-    </div>
-</div>
+
 @endsection
